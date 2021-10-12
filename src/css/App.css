@@ -1,0 +1,14 @@
+.common-container {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.balance {
+  text-align: center;
+}
+
+.header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
