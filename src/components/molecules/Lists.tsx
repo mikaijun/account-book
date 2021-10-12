@@ -1,5 +1,5 @@
-import { IncomeList } from "../atoms/IncomeList";
-import { ExpensesList } from "../atoms/Expenses";
+import { Income } from "../atoms/Income";
+import { Expense } from "../atoms/Expense";
 
 export const Lists = () => {
   const incomes = [
@@ -27,13 +27,13 @@ export const Lists = () => {
       <div>
         <p>収入一覧</p>
         {incomes.map((income) => (
-          <IncomeList item={income.item} price={income.price} />
+          <Income item={income.item} price={income.price} />
         ))}
       </div>
       <div>
         <p>支出一覧</p>
         {expenses.map((expense) => (
-          <ExpensesList item={expense.item} price={expense.price} />
+          <Expense item={expense.item} price={expense.price} />
         ))}
       </div>
     </div>

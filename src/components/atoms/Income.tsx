@@ -5,7 +5,7 @@ type Props = {
   price: number;
 };
 
-export const IncomeList: React.FC<Props> = ({ item, price }: Props) => {
+export const Income: React.FC<Props> = ({ item, price }: Props) => {
   return (
     <div className="list">
       <p>{item}</p>

@@ -2,7 +2,7 @@ import { SelectBox } from "../atoms/SelectBox";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
 
-export const AddItems = () => {
+export const Forms = () => {
   return (
     <div className="add-items">
       <SelectBox />

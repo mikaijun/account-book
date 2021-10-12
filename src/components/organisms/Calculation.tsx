@@ -1,10 +1,10 @@
-import { AddItems } from "../molecules/AddItems";
+import { Forms } from "../molecules/Forms";
 import { Lists } from "../molecules/Lists";
 
 export const Calculation = () => {
   return (
     <div>
-      <AddItems />
+      <Forms />
       <Lists />
     </div>
   );
