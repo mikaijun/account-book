@@ -12,3 +12,20 @@
   display: flex;
   justify-content: center;
 }
+
+.add-items {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}

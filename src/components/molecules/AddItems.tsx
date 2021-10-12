@@ -4,7 +4,7 @@ import { Button } from "../atoms/Button";
 
 export const AddItems = () => {
   return (
-    <div>
+    <div className="add-items">
       <SelectBox />
       内容:
       <Input />
