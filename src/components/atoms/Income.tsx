@@ -1,14 +1,14 @@
 import React from "react";
 
 type Props = {
-  item: string;
+  context: string;
   price: number;
 };
 
-export const Income: React.FC<Props> = ({ item, price }: Props) => {
+export const Income: React.FC<Props> = ({ context, price }: Props) => {
   return (
     <div className="list">
-      <p>{item}</p>
+      <p>{context}</p>
       <p>+{price}</p>
     </div>
   );

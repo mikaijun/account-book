@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SelectBox } from "../atoms/SelectBox";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
