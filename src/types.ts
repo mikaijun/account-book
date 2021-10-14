@@ -3,12 +3,9 @@ export type list = {
   context: string;
 };
 
-export type lists = {
+export type AccountBookValue = {
   income: list[];
   expense: list[];
-};
-
-export type AccountBookValue = {
-  lists: lists | undefined;
-  setLists: (lists: lists | undefined) => void;
+  setIncome: (income: list[]) => void;
+  setExpense: (expense: list[]) => void;
 };

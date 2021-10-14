@@ -1,17 +1,18 @@
 import { Income } from "../atoms/Income";
 import { Expense } from "../atoms/Expense";
-import { lists } from "../../types";
+import { list } from "../../types";
 
 type Props = {
-  lists: lists;
+  income: list[];
+  expense: list[];
 };
 
-export const Lists: React.FC<Props> = ({ lists }: Props) => {
+export const Lists: React.FC<Props> = ({ income, expense }: Props) => {
   return (
     <div className="lists">
       <div>
         <p>収入一覧</p>
-        {lists.income.map((income, index) => (
+        {income.map((income, index) => (
           <Income
             context={income.context}
             price={income.price}
@@ -21,7 +22,7 @@ export const Lists: React.FC<Props> = ({ lists }: Props) => {
       </div>
       <div>
         <p>支出一覧</p>
-        {lists.expense.map((expense, index) => (
+        {expense.map((expense, index) => (
           <Expense
             context={expense.context}
             price={expense.price}
