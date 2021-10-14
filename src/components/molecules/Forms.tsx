@@ -7,19 +7,19 @@ import { AccountBookContext } from "../../contexts/AccountBookContexts";
 export const Forms = () => {
   const [plusOrMinus, setPlusOrMinus] = useState<"plus" | "minus">("plus");
   const [contents, setContents] = useState<string>("");
-  const [price, setPrice] = useState<number>(0);
+  const [price, setPrice] = useState<number | string>("");
   const { income, expense, setIncome, setExpense } =
     useContext(AccountBookContext);
 
   useEffect(() => {}, [income, expense]);
 
   const addList = () => {
-    const newValue = { context: contents, price: price };
+    const newValue = { context: contents, price: Number(price) };
     plusOrMinus === "plus"
       ? setIncome([...income, newValue])
       : setExpense([...expense, newValue]);
     setContents("");
-    setPrice(0);
+    setPrice("");
   };
 
   // TODO: 後で型定義し直す
