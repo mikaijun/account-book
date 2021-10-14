@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { SelectBox } from "../atoms/SelectBox";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
@@ -11,32 +11,15 @@ export const Forms = () => {
   const { income, expense, setIncome, setExpense } =
     useContext(AccountBookContext);
 
+  useEffect(() => {}, [income, expense]);
+
   const addList = () => {
-    console.log(contents);
-    console.log(price);
-    console.log(plusOrMinus);
-    setIncome([
-      ...income,
-      {
-        context: "収入",
-        price: 10000,
-      },
-      {
-        context: "副業",
-        price: 10000,
-      },
-    ]);
-    setExpense([
-      ...expense,
-      {
-        context: "光熱費",
-        price: 10000,
-      },
-      {
-        context: "携帯代",
-        price: 2000,
-      },
-    ]);
+    const newValue = { context: contents, price: price };
+    plusOrMinus === "plus"
+      ? setIncome([...income, newValue])
+      : setExpense([...expense, newValue]);
+    setContents("");
+    setPrice(0);
   };
 
   // TODO: 後で型定義し直す
@@ -59,9 +42,9 @@ export const Forms = () => {
     <div className="add-items">
       <SelectBox name={"plusOrMinus"} onChange={handleChange} />
       内容:
-      <Input name={"contents"} onChange={handleChange} />
+      <Input name={"contents"} value={contents} onChange={handleChange} />
       金額:
-      <Input name={"price"} onChange={handleChange} />円
+      <Input name={"price"} value={price} onChange={handleChange} />円
       <Button text={"追加"} onClick={addList} />
     </div>
   );
