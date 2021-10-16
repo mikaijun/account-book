@@ -1,6 +1,7 @@
-import { useState } from "react";
-import dayjs, { Dayjs } from "dayjs";
+import { useContext } from "react";
+import dayjs from "dayjs";
 import { Button } from "../atoms/Button";
+import { AccountBookContext } from "../../contexts/AccountBookContexts";
 
 export const Header = () => {
   const onClick = (type: string) => {
@@ -9,7 +10,7 @@ export const Header = () => {
       : setYearMonth(dayjs(yearMonth).subtract(1, "month"));
   };
 
-  const [yearMonth, setYearMonth] = useState<Dayjs>(dayjs());
+  const { yearMonth, setYearMonth } = useContext(AccountBookContext);
 
   return (
     <div className="header">
