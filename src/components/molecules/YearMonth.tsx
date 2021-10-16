@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { Button } from "../atoms/Button";
 import { AccountBookContext } from "../../contexts/AccountBookContexts";
 
-export const Header = () => {
+export const YearMonth = () => {
   const onClick = (type: string) => {
     type === "add"
       ? setYearMonth(dayjs(yearMonth).add(1, "month"))
@@ -13,7 +13,7 @@ export const Header = () => {
   const { yearMonth, setYearMonth } = useContext(AccountBookContext);
 
   return (
-    <div className="header">
+    <div className="yearMonth">
       <Button text={"←先月"} onClick={() => onClick("subtract")} />
       <p>{yearMonth.format("YYYY/MM")}</p>
       <Button text={"次月→"} onClick={() => onClick("add")} />

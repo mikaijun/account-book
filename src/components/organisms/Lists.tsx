@@ -1,5 +1,5 @@
-import { Income } from "../atoms/Income";
-import { Expense } from "../atoms/Expense";
+import { Income } from "../molecules/Income";
+import { Expense } from "../molecules/Expense";
 import { list } from "../../types";
 import dayjs, { Dayjs } from "dayjs";
 
@@ -33,6 +33,7 @@ export const Lists: React.FC<Props> = ({
           <p>収入一覧</p>
           {displayIncome.map((income, index) => (
             <Income
+              id={income.id}
               date={income.date}
               context={income.context}
               price={income.price}
@@ -44,6 +45,7 @@ export const Lists: React.FC<Props> = ({
           <p>支出一覧</p>
           {displayExpense.map((expense, index) => (
             <Expense
+              id={expense.id}
               date={expense.date}
               context={expense.context}
               price={expense.price}

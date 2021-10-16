@@ -1,6 +1,7 @@
 import dayjs, { Dayjs } from "dayjs";
 import { useState } from "react";
-import { Display } from "../organisms/Display";
+import { Calculation } from "../organisms/Calculation";
+import { Lists } from "../organisms/Lists";
 import { AccountBookContext } from "../../contexts/AccountBookContexts";
 import { list } from "../../types";
 import "../../css/App.css";
@@ -20,7 +21,8 @@ export default function App() {
         setYearMonth,
       }}
     >
-      <Display />
+      <Calculation />
+      <Lists yearMonth={yearMonth} income={income} expense={expense} />
     </AccountBookContext.Provider>
   );
 }
