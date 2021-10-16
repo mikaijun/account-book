@@ -14,6 +14,7 @@ export const Lists: React.FC<Props> = ({ income, expense }: Props) => {
         <p>収入一覧</p>
         {income.map((income, index) => (
           <Income
+            date={income.date}
             context={income.context}
             price={income.price}
             key={`income-${index}`}
@@ -24,6 +25,7 @@ export const Lists: React.FC<Props> = ({ income, expense }: Props) => {
         <p>支出一覧</p>
         {expense.map((expense, index) => (
           <Expense
+            date={expense.date}
             context={expense.context}
             price={expense.price}
             key={`expense-${index}`}

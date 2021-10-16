@@ -2,19 +2,21 @@ import { useState, useContext, useEffect } from "react";
 import { SelectBox } from "../atoms/SelectBox";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
+import { Calendar } from "../atoms/Calendar";
 import { AccountBookContext } from "../../contexts/AccountBookContexts";
 
 export const Forms = () => {
   const [plusOrMinus, setPlusOrMinus] = useState<"plus" | "minus">("plus");
   const [contents, setContents] = useState<string>("");
   const [price, setPrice] = useState<number | string>("");
+  const [date, setDate] = useState<string>("");
   const { income, expense, setIncome, setExpense } =
     useContext(AccountBookContext);
 
   useEffect(() => {}, [income, expense]);
 
   const addList = () => {
-    const newValue = { context: contents, price: Number(price) };
+    const newValue = { context: contents, price: Number(price), date: date };
     plusOrMinus === "plus"
       ? setIncome([...income, newValue])
       : setExpense([...expense, newValue]);
@@ -26,6 +28,9 @@ export const Forms = () => {
   const handleChange = (event: any) => {
     if (!event.target) return;
     switch (event.target.name) {
+      case "date":
+        setDate(event.target.value);
+        break;
       case "contents":
         setContents(event.target.value);
         break;
@@ -40,6 +45,7 @@ export const Forms = () => {
   };
   return (
     <div className="add-items">
+      <Calendar name={"date"} value={date} onChange={handleChange} />
       <SelectBox name={"plusOrMinus"} onChange={handleChange} />
       内容:
       <Input name={"contents"} value={contents} onChange={handleChange} />

@@ -1,6 +1,9 @@
+// import { Dayjs } from "dayjs";
+
 export type list = {
   price: number;
   context: string;
+  date: string;
 };
 
 export type AccountBookValue = {
