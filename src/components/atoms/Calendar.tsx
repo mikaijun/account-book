@@ -2,10 +2,10 @@ import React from "react";
 
 type Props = {
   name: string;
-  value: string | number;
+  value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
-export const Calendar: React.FC<Props> = ({ name, value, onChange }: Props) => {
+export const Calendar: React.FC<Props> = ({ name, onChange, value }: Props) => {
   return <input type="date" value={value} name={name} onChange={onChange} />;
 };
