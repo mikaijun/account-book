@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
-import { Header } from "../molecules/Header";
 import { Balance } from "../atoms/Balance";
+import { Header } from "../molecules/Header";
+import { Lists } from "../molecules/Lists";
 import { AccountBookContext } from "../../contexts/AccountBookContexts";
 
 export const Display = () => {
@@ -10,6 +11,7 @@ export const Display = () => {
     <div>
       <Header />
       <Balance income={income} expense={expense} />
+      <Lists income={income} expense={expense} />
     </div>
   );
 };

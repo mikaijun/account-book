@@ -12,8 +12,8 @@ export default function App() {
     <AccountBookContext.Provider
       value={{ income, expense, setIncome, setExpense }}
     >
-      <Display />
       <Calculation />
+      <Display />
     </AccountBookContext.Provider>
   );
 }
