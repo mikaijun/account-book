@@ -1,6 +1,7 @@
 import { Dayjs } from "dayjs";
 
 export type list = {
+  id: number;
   price: number;
   context: string;
   date: string;

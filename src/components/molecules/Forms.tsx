@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import dayjs from "dayjs";
 import { SelectBox } from "../atoms/SelectBox";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
@@ -16,7 +17,12 @@ export const Forms = () => {
   useEffect(() => {}, [income, expense]);
 
   const addList = () => {
-    const newValue = { context: contents, price: Number(price), date: date };
+    const newValue = {
+      id: dayjs().valueOf(),
+      context: contents,
+      price: Number(price),
+      date: date,
+    };
     plusOrMinus === "plus"
       ? setIncome([...income, newValue])
       : setExpense([...expense, newValue]);
