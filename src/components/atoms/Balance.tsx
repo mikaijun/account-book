@@ -9,7 +9,6 @@ type Props = {
 export const Balance: React.FC<Props> = ({ income, expense }: Props) => {
   const incomePrice = income.reduce((sum, i) => sum + i.price, 0);
   const expensePrice = expense.reduce((sum, i) => sum + i.price, 0);
-  console.log(incomePrice);
   return (
     <div className="balance">
       <div>残高:{incomePrice - expensePrice}円</div>
