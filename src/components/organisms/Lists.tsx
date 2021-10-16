@@ -13,14 +13,14 @@ export const Lists: React.FC<Props> = ({
   expense,
   yearMonth,
 }: Props) => {
-  const incomePrice = income.reduce((sum, i) => sum + i.price, 0);
-  const expensePrice = expense.reduce((sum, i) => sum + i.price, 0);
   const displayIncome = income.filter(
     (item) => dayjs(item.date).format("YYYY/MM") === yearMonth.format("YYYY/MM")
   );
   const displayExpense = expense.filter(
     (item) => dayjs(item.date).format("YYYY/MM") === yearMonth.format("YYYY/MM")
   );
+  const incomePrice = displayIncome.reduce((sum, i) => sum + i.price, 0);
+  const expensePrice = displayExpense.reduce((sum, i) => sum + i.price, 0);
   return (
     <div>
       <div className="balance">
